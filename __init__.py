@@ -1,6 +1,6 @@
-# mycroft-skill-bbc-news
+# skill-bbc-radio
 #
-# A Mycroft skill to play the latest bbc news
+# A Mycroft skill to play the bbc radio
 #
 # Based on the mycroft-skill-cbc-news skill by chrison999
 #
@@ -11,10 +11,7 @@
 # along with this skill.  If not, see <http://www.gnu.org/licenses/>.
 
 
-import feedparser
 import time
-from os.path import dirname
-import re
 
 from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill
@@ -26,21 +23,21 @@ __author__ = 'jubbathejack'
 LOGGER = getLogger(__name__)
 
 
-class BBCNewsSkill(MycroftSkill):
+class BBCRadioSkill(MycroftSkill):
     def __init__(self):
-        super(BBCNewsSkill, self).__init__(name="BBCNewsSkill")
+        super(BBCRadioSkill, self).__init__(name="BBCRadioSkill")
         self.process = None
 
     def initialize(self):
-        intent = IntentBuilder("BBCNewsIntent").require(
-            "BBCNewsKeyword").build()
+        intent = IntentBuilder("BBCRadioIntent").require(
+            "BBCRadioKeyword").build()
         self.register_intent(intent, self.handle_intent)
 
     def handle_intent(self, message):
         try:
 
             data = "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_p"
-            self.speak_dialog('bbc.news')
+            self.speak_dialog('bbc.radio')
             time.sleep(5)
 
             self.process = play_mp3(data)
@@ -50,10 +47,10 @@ class BBCNewsSkill(MycroftSkill):
 
     def stop(self):
         if self.process and self.process.poll() is None:
-            self.speak_dialog('bbc.news.stop')
+            self.speak_dialog('bbc.radio.stop')
             self.process.terminate()
             self.process.wait()
 
 
 def create_skill():
-    return BBCNewsSkill()
+    return BBCRadioSkill()
