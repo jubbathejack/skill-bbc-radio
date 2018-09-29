@@ -13,6 +13,7 @@
 # along with this skill.  If not, see <http://www.gnu.org/licenses/>.
 
 import time
+from os.path import dirname
 
 from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill
