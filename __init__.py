@@ -37,7 +37,6 @@ class BBCRadioSkill(MycroftSkill):
 
     def handle_intent(self, message):
         try:
-
             rstation = "http://bbcmedia.ic.llnwd.net/stream/bbcmedia_radio1_mf_p"
             self.speak_dialog('start.radio')
             time.sleep(5)
