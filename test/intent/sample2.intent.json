@@ -1,0 +1,7 @@
+{
+    "utterance": "play the radio",
+    "intent_type": "BBCRadioIntent",
+    "intent": {
+      "BBCRadioKeyword": "play bbc radio 1"
+    }
+  }
