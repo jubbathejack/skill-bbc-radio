@@ -1,19 +1,15 @@
-To submit your skill, replace this file with text from 
-https://rawgit.com/MycroftAI/mycroft-skills/master/meta_editor.html
-
-
-## YOUR SKILL NAME
-One line description of the skill
+## BBC Radio Skill
+Mycroft skill to play BBC radio stations (currently only BBC Radio 1).
 
 ## Description 
-A more verbose description, including any extra instructions or
-information that didn't fit in the one line.
+A Mycroft skill to play BBC radio stations. I intend to implement a feature to allow for dynamic
+selection of any of the radio stations that the BBC operates. It currently is only configured
+to play BBC radio 1 just to get the skill up and running. I then intend to implement the
+feature for multiple stations.
 
 ## Examples 
-* "Hello world"
-* "Greetings planet earth"
-* "Count up"
-* "Count down"
+* "BBC Radio 1"
+* "Radio 1"
 
 ## Credits 
-Your name
+Jack Parker
